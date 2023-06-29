@@ -9,37 +9,90 @@ $(document).ready(function () {
       console.log(error);
     },
   });
-});
 
-function renderGrids(data) {
-  var gridsContainer = $("#grids-container");
-  gridsContainer.empty();
+  function renderGrids(data) {
+    var gridsContainer = $("#grids-container");
+    gridsContainer.empty();
 
-  $.each(data, function (index, machine) {
-    var grid = $("<div>", {
-      class: "grid col-lg-3 col-md-6 col-sm-12",
-    });
-
-    var gridBody = $('<div>', {
-      class: 'grid-body'
-    });
-
-    var metricsList = $('<ul>', {
-      class: 'list-group list-group-flush'
-    });
-
-    $.each(machine.metrics, function(index, metric) {
-      var metricItem = $('<li>', {
-        class: 'list-group-item',
-        text: metric.name + ': ' + metric.value
+    $.each(data, function (index, machine) {
+      var grid = $("<div>", {
+        class: "card col-lg-4 col-md-6 col-sm-12",
       });
 
-      metricsList.append(metricItem);
+      var stateColor = getMachineStateColor(machine);
+      var stateIndicator = $("<div>", {
+        class: "state-indicator " + stateColor,
+        text: machine.name,
+      });
+
+      var machineState = getMachineState(machine);
+      var stateText = $('<span>', {
+          class: 'state-text',
+          text: machineState
+      });
+  
+      stateIndicator.append(stateText);
+
+      var gridBody = $("<div>", {
+        class: "card-body",
+      });
+
+      var metricsList = $("<ul>", {
+        class: "list-group list-group-flush",
+      });
+
+      $.each(machine.metrics, function (index, metric) {
+        var metricItem = $("<li>", {
+          class: "list-group-item",
+          text: metric.name + ": " + metric.value,
+        });
+
+        metricsList.append(metricItem);
+      });
+
+      gridBody.append(metricsList);
+      grid.append(stateIndicator, gridBody);
+
+      gridsContainer.append(grid);
+    });
+  }
+
+  function getMachineStateColor(machine) {
+    var stateColor = "";
+
+    $.each(machine.metrics, function (index, metric) {
+      if (metric.name === "Running Since") {
+        stateColor = "bg-success";
+        return false;
+      } else if (metric.name === "Paused Since") {
+        stateColor = "bg-secondary";
+        return false;
+      } else if (metric.name === "Stopped Since") {
+        stateColor = "bg-danger";
+        return false;
+      }
     });
 
-    gridBody.append(metricsList);
-    grid.append(stateIndicator, gridBody);
+    return stateColor;
+  }
 
-    gridsContainer.append(grid);
-  });
-}
+  function getMachineState(machine) {
+    var machineState = '';
+
+    $.each(machine.metrics, function(index, metric) {
+      if (metric.name === 'Running Since') {
+        machineState = 'Running';
+        return false; 
+      } else if (metric.name === 'Paused Since') {
+        machineState = 'Paused';
+        return false;
+      } else if (metric.name === 'Stopped Since') {
+        machineState = 'Stopped';
+        return false;
+      }
+    });
+
+    return machineState;
+  }
+
+});

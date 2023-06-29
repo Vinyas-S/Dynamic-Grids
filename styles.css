@@ -1,18 +1,41 @@
-.grid {
-    border-radius: 10px; 
-    margin:5px;
+.card {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 5px;
 }
 
-.grid-body {
-    padding-top: 30px;
-  }
-  
-.container h1 .heading{
+.state-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.bg-success {
+  background-color: green;
+}
+
+.bg-secondary {
+  background-color: grey;
+}
+
+.bg-danger {
+  background-color: red;
+}
+
+.state-text {
+  margin-left: 5px;
+}
+
+.container h3 .heading{
     width:52rem; 
     margin:10px;
     font-size: 30px; 
     padding:0.5rem;
     background-color: #6c757d;
 }
-  
   
