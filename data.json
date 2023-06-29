@@ -1,0 +1,105 @@
+[
+    {
+      "name": "Machine 1",
+      "metrics": [
+        {
+          "name": "Performance",
+          "value": "98%"
+        },
+        {
+          "name": "Running Since",
+          "value": "12h:30m:15s"
+        },
+        {
+          "name": "Parts Produced",
+          "value": "1250"
+        }
+      ]
+    },
+    {
+        "name": "Machine 2",
+        "metrics": [
+          {
+            "name": "Performance",
+            "value": "98%"
+          },
+          {
+            "name": "Paused Since",
+            "value": "1h:30m:15s"
+          },
+          {
+            "name": "Parts Produced",
+            "value": "988"
+          }
+        ]
+      },
+      {
+        "name": "Machine 3",
+        "metrics": [
+          {
+            "name": "Performance",
+            "value": "98%"
+          },
+          {
+            "name": "Stopped Since",
+            "value": "1h:30m:15s"
+          },
+          {
+            "name": "Parts Produced",
+            "value": "850"
+          }
+        ]
+      },
+      {
+        "name": "Machine 4",
+        "metrics": [
+          {
+            "name": "Performance",
+            "value": "98%"
+          },
+          {
+            "name": "Running Since",
+            "value": "12h:30m:15s"
+          },
+          {
+            "name": "Parts Produced",
+            "value": "1250"
+          }
+        ]
+      },
+      {
+          "name": "Machine 4",
+          "metrics": [
+            {
+              "name": "Performance",
+              "value": "98%"
+            },
+            {
+              "name": "Paused Since",
+              "value": "1h:30m:15s"
+            },
+            {
+              "name": "Parts Produced",
+              "value": "988"
+            }
+          ]
+        },
+        {
+          "name": "Machine 6",
+          "metrics": [
+            {
+              "name": "Performance",
+              "value": "98%"
+            },
+            {
+              "name": "Stopped Since",
+              "value": "1h:30m:15s"
+            },
+            {
+              "name": "Parts Produced",
+              "value": "850"
+            }
+          ]
+        }
+    
+  ]
