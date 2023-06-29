@@ -1,14 +1,18 @@
 .grid {
-    border-radius: 10px; /* Add rounded corners */
+    border-radius: 10px; 
     margin:5px;
 }
 
+.grid-body {
+    padding-top: 30px;
+  }
+  
 .container h1 .heading{
     width:52rem; 
     margin:10px;
     font-size: 30px; 
     padding:0.5rem;
-    background-color: #6c757d !important;
+    background-color: #6c757d;
 }
   
   
