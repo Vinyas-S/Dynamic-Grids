@@ -17,13 +17,13 @@ function renderGrids(data) {
 
   $.each(data, function (index, machine) {
     var grid = $("<div>", {
-      class: "card col-lg-4 col-md-6 col-sm-12",
+      class: "card col-lg-3 col-md-6 col-sm-12",
     });
 
     var stateColor = getMachineStateColor(machine);
     var stateIndicator = $("<div>", {
       class: "state-indicator " + stateColor,
-      text: machine.name,
+      text: machine.MACHINE
     });
 
     var machineState = machine.STATUS;
@@ -32,7 +32,7 @@ function renderGrids(data) {
       text: machineState,
     });
 
-    stateIndicator.text(machine.MACHINE).append(stateText);
+    stateIndicator.append(stateText);
 
     var gridBody = $("<div>", {
       class: "card-body",
@@ -65,7 +65,7 @@ function getMachineStateColor(machine) {
     return "bg-success";
   } else if (machine.STATUS === "STOPPED") {
     return "bg-danger";
-  } else {
-    return "";
+  } else if(machine.STATUS === "PAUSED") {
+    return "bg-secondary";
   }
 }

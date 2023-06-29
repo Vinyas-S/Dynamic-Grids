@@ -1,8 +1,13 @@
+#grids-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+  
 .card {
-  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 15px;
-  padding: 5px;
+  padding: 1px;
 }
 
 .state-indicator {
