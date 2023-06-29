@@ -26,13 +26,13 @@ function renderGrids(data) {
       text: machine.name,
     });
 
-    var machineState = getMachineState(machine);
-    var stateText = $('<span>', {
-        class: 'state-text',
-        text: machineState
+    var machineState = machine.STATUS;
+    var stateText = $("<span>", {
+      class: "state-text",
+      text: machineState,
     });
 
-    stateIndicator.append(stateText);
+    stateIndicator.text(machine.MACHINE).append(stateText);
 
     var gridBody = $("<div>", {
       class: "card-body",
@@ -42,13 +42,15 @@ function renderGrids(data) {
       class: "list-group list-group-flush",
     });
 
-    $.each(machine.metrics, function (index, metric) {
-      var metricItem = $("<li>", {
-        class: "list-group-item",
-        text: metric.name + ": " + metric.value,
-      });
+    $.each(machine, function (key, value) {
+      if (key !== "MACHINE" && key !== "STATUS") {
+        var metricItem = $("<li>", {
+          class: "list-group-item",
+          text: key + ": " + value,
+        });
 
-      metricsList.append(metricItem);
+        metricsList.append(metricItem);
+      }
     });
 
     gridBody.append(metricsList);
@@ -59,39 +61,11 @@ function renderGrids(data) {
 }
 
 function getMachineStateColor(machine) {
-  var stateColor = "";
-
-  $.each(machine.metrics, function (index, metric) {
-    if (metric.name === "Running Since") {
-      stateColor = "bg-success";
-      return false;
-    } else if (metric.name === "Paused Since") {
-      stateColor = "bg-secondary";
-      return false;
-    } else if (metric.name === "Stopped Since") {
-      stateColor = "bg-danger";
-      return false;
-    }
-  });
-
-  return stateColor;
-}
-
-function getMachineState(machine) {
-  var machineState = '';
-
-  $.each(machine.metrics, function(index, metric) {
-    if (metric.name === 'Running Since') {
-      machineState = 'Running';
-      return false; 
-    } else if (metric.name === 'Paused Since') {
-      machineState = 'Paused';
-      return false;
-    } else if (metric.name === 'Stopped Since') {
-      machineState = 'Stopped';
-      return false;
-    }
-  });
-
-  return machineState;
+  if (machine.STATUS === "RUNNING") {
+    return "bg-success";
+  } else if (machine.STATUS === "STOPPED") {
+    return "bg-danger";
+  } else {
+    return "";
+  }
 }

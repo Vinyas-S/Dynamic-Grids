@@ -1,105 +1,43 @@
-[
-    {
-      "name": "Machine 1",
-      "metrics": [
-        {
-          "name": "Performance",
-          "value": "98%"
-        },
-        {
-          "name": "Running Since",
-          "value": "12h:30m:15s"
-        },
-        {
-          "name": "Parts Produced",
-          "value": "1250"
-        }
-      ]
-    },
-    {
-        "name": "Machine 2",
-        "metrics": [
-          {
-            "name": "Performance",
-            "value": "98%"
-          },
-          {
-            "name": "Paused Since",
-            "value": "1h:30m:15s"
-          },
-          {
-            "name": "Parts Produced",
-            "value": "988"
-          }
-        ]
-      },
-      {
-        "name": "Machine 3",
-        "metrics": [
-          {
-            "name": "Performance",
-            "value": "98%"
-          },
-          {
-            "name": "Stopped Since",
-            "value": "1h:30m:15s"
-          },
-          {
-            "name": "Parts Produced",
-            "value": "850"
-          }
-        ]
-      },
-      {
-        "name": "Machine 4",
-        "metrics": [
-          {
-            "name": "Performance",
-            "value": "98%"
-          },
-          {
-            "name": "Running Since",
-            "value": "12h:30m:15s"
-          },
-          {
-            "name": "Parts Produced",
-            "value": "1250"
-          }
-        ]
-      },
-      {
-          "name": "Machine 4",
-          "metrics": [
-            {
-              "name": "Performance",
-              "value": "98%"
-            },
-            {
-              "name": "Paused Since",
-              "value": "1h:30m:15s"
-            },
-            {
-              "name": "Parts Produced",
-              "value": "988"
-            }
-          ]
-        },
-        {
-          "name": "Machine 6",
-          "metrics": [
-            {
-              "name": "Performance",
-              "value": "98%"
-            },
-            {
-              "name": "Stopped Since",
-              "value": "1h:30m:15s"
-            },
-            {
-              "name": "Parts Produced",
-              "value": "850"
-            }
-          ]
-        }
-    
-  ]
+[{
+  "MACHINE": "IMM-01",
+  "PERFORMANCE": "98",
+  "RUNNING SINCE": "2h: 30 m: 15 s",
+  "PARTS PRODUCED": "1250",
+  "STATUS": "RUNNING"
+},
+{
+  "MACHINE": "IMM-02",
+  "PERFORMANCE": "70",
+  "RUNNING SINCE": "1h: 30 m: 15 s",
+  "PARTS PRODUCED": "2450",
+  "STATUS": "RUNNING"
+},
+{
+  "MACHINE": "IMM-03",
+  "PERFORMANCE": "28",
+  "STOPPED SINCE": "30 m: 15 s",
+  "PARTS PRODUCED": "24",
+  "STATUS": "STOPPED"
+},
+{
+  "MACHINE": "IMM-04",
+  "PERFORMANCE": "98",
+  "RUNNING SINCE": "2h: 30 m: 15 s",
+  "PARTS PRODUCED": "1250",
+  "STATUS": "RUNNING"
+},
+{
+  "MACHINE": "IMM-05",
+  "PERFORMANCE": "70",
+  "RUNNING SINCE": "1h: 30 m: 15 s",
+  "PARTS PRODUCED": "2450",
+  "STATUS": "RUNNING"
+},
+{
+  "MACHINE": "IMM-06",
+  "PERFORMANCE": "28",
+  "STOPPED SINCE": "30 m: 15 s",
+  "PARTS PRODUCED": "24",
+  "STATUS": "STOPPED"
+}
+]
